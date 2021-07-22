@@ -11,7 +11,7 @@ const bindMiddleware = (middleware: Middleware[]): StoreEnhancer => {
 }
 
 const makeStore: MakeStore<{}> = () => {
-    const store = createStore(rootReducer, {}, bindMiddleware());
+    const store = createStore(rootReducer, {});
     return store
 }
     

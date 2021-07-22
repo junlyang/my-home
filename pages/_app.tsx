@@ -44,15 +44,17 @@ class WrappedApp extends App<AppInitialProps> {
         return (
             <>
                 <Head>
-                    <title>my project</title>
+                    <title>량량스</title>
                     <meta property="og:title" content="my project" key="title" />
+                    <link rel="stylesheet" href="https://unpkg.com/mvp.css"></link>
                 </Head>
                 <style jsx global>{`
                     body {margin: 0}
                 `}
                 </style>
-                
-                <Component {...pageProps} />
+                <AppLayout>
+                    <Component {...pageProps} />
+                </AppLayout>
             </>
         );
     }
