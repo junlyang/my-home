@@ -8,7 +8,7 @@ export default function Header() {
                     <a href="/">Home</a>
                 </li>
                 <li>
-                    <a href="/images">Image(테스트)</a>
+                    <a href="/images">ImageScroll</a>
                 </li>
                 <li><a>settings</a>
                     <ul>
