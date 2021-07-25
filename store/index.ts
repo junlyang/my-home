@@ -1,12 +1,11 @@
 import { createWrapper, HYDRATE } from 'next-redux-wrapper';
 import { createStore, compose, applyMiddleware } from "redux";
-import createSagaMiddleware from 'redux-saga';
+import createSagaMiddleware, {Task}  from 'redux-saga';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import rootSaga from '../sagas';
 import reducer from '../reducers'
 
-const configureStore = ((initialState, options) => {
-  console.log(options)
+const configureStore = (() => {
   const sagaMiddleware = createSagaMiddleware();
   const middlewares = [sagaMiddleware];
   
@@ -15,13 +14,18 @@ const configureStore = ((initialState, options) => {
     : composeWithDevTools(
       applyMiddleware(...middlewares),
     );
-  const store = createStore(reducer,initialState,enhancer);
+  const store = createStore(reducer,enhancer);
   store.sagaTask = sagaMiddleware.run(rootSaga);
   return store
 })
 
-const wrapper =createWrapper(configureStore, {
-    debug: process.env.NODE_ENV === ' development'
+const wrapper = createWrapper(configureStore, {
+    debug: false
 })
 
+declare module 'redux' {
+  export interface Store {
+    sagaTask?: Task;
+  }
+}
 export default wrapper;
