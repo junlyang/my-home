@@ -10,12 +10,13 @@
     "lint": "next lint",
     "predeploy": "next build",
     "export": "next export",
-    "deploy": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && git add out/ && git commit -m \"Deploy Next.js to github-pages\" && git subtree push --prefix out origin github-pages"
+    "deploy": "rm -rf node_modules/.cache && next build && next export && touch out/.nojekyll && git add out/ && git commit -m \"Deploy Next.js to github-pages\" && git subtree push --prefix out origin +github-pages"
   },
   "dependencies": {
     "@emotion/react": "^11.4.0",
     "@rebass/preset": "^4.0.5",
     "axios": "^0.21.1",
+    "chalk": "^2.4.2",
     "emotion-theming": "^11.0.0",
     "next": "11.0.1",
     "next-redux-wrapper": "^6.0.2",
@@ -28,10 +29,11 @@
     "styled-components": "^5.3.0"
   },
   "devDependencies": {
-    "@types/react": "17.0.14",
+    "@types/node": "^16.4.2",
+    "@types/react": "^17.0.14",
     "eslint": "7.30.0",
     "eslint-config-next": "11.0.1",
     "gh-pages": "^3.2.3",
-    "typescript": "4.3.5"
+    "typescript": "^4.3.5"
   }
 }

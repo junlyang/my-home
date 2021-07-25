@@ -8,21 +8,21 @@ import reducer from '../reducers'
 import rootSaga from '../sagas'
 import Head from 'next/head'
 import AppLayout from '../partials/AppLayout'
-import { wrapper } from '../store';
+import wrapper from '../store';
 
-const MyApp = ({ Component, store }) => {
+const MyHome = ({ Component, pageProps }) => {
     console.log("MY APP STARTED")
     return (
-        <Provider store={store}>
+        <>
             <Head>
                 <title>량량스</title>
                 <link rel="stylesheet" href="https://unpkg.com/mvp.css"></link>
                 <meta property="og:title" content="My page title" key="title" />
             </Head>
             <AppLayout>
-                <Component/>
+                <Component {...pageProps}/>
             </AppLayout>
-        </Provider>
+        </>
         )
 }
 class WrappedApp extends App<AppInitialProps> {
@@ -60,4 +60,5 @@ class WrappedApp extends App<AppInitialProps> {
     }
 }
 
-export default wrapper.withRedux(WrappedApp);
+
+export default wrapper.withRedux(MyHome)
