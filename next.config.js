@@ -1,10 +1,10 @@
 
 const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
-const debug = process.env.NODE_ENV !== 'production'
+const debug = true //process.env.NODE_ENV !== 'production'
 const name = 'my-home'
 
 module.exports = withBundleAnalyzer({
-        assetPrefix: !debug ? `/${name}/` : '',
+        assetPrefix: !debug ? `${name}/` : '',
         env: {
             google_id : "",
             facebook_id :"",
@@ -12,6 +12,7 @@ module.exports = withBundleAnalyzer({
             naver_id : "",
             API_URL: process.env.NODE_ENV === "production" ? 'http://localhost:8000' : 'http://localhost:8000',
             IMAGE_URL : process.env.NODE_ENV === "production" ? 'http://localhost:8000' : 'http://localhost:8000',
+            BASE_URL : process.env.NODE_ENV === "production" ? 'http://localhost:3000'+`/${name}` : 'http://localhost:3000',
         },
         analyzeServer: ["server", "both"].includes(process.env.BUNDLE_ANALYZE),
         analyzeBrowser: ["browser", "both"].includes(process.env.BUNDLE_ANALYZE),
