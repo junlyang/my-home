@@ -12,7 +12,7 @@ module.exports = withBundleAnalyzer({
             naver_id : "",
             API_URL: process.env.NODE_ENV === "production" ? 'http://localhost:8000' : 'http://localhost:8000',
             IMAGE_URL : process.env.NODE_ENV === "production" ? 'http://localhost:8000' : 'http://localhost:8000',
-            BASE_URL : process.env.NODE_ENV === "production" ? 'http://localhost:3000'+`/${name}` : 'http://localhost:3000',
+            BASE_URL : process.env.NODE_ENV === "production" ? `/${name}` : '',
         },
         analyzeServer: ["server", "both"].includes(process.env.BUNDLE_ANALYZE),
         analyzeBrowser: ["browser", "both"].includes(process.env.BUNDLE_ANALYZE),
