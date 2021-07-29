@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "ANALYZE=true next build",
     "start": "next start",
     "lint": "next lint",
     "predeploy": "next build",
@@ -14,7 +14,9 @@
   },
   "dependencies": {
     "@emotion/react": "^11.4.0",
+    "@next/bundle-analyzer": "^11.0.1",
     "@rebass/preset": "^4.0.5",
+    "antd": "^4.16.9",
     "axios": "^0.21.1",
     "chalk": "^2.4.2",
     "emotion-theming": "^11.0.0",

@@ -54,7 +54,6 @@ const images = () => {
         <>
             images<br/>
             IntersectionObserver 로 해보자.<br/>
-            시험의 굴욕을 잊지말기.
             {[...Array(itemCount)].map((_, i) => {
                 return (
                     <>  

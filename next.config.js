@@ -1,7 +1,10 @@
 
-const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
 const debug = true //process.env.NODE_ENV !== 'production'
 const name = 'my-home'
+
+withBundleAnalyzer = require('@next/bundle-analyzer')({
+    enabled: process.env.ANALYZE === 'true',
+})
 
 module.exports = withBundleAnalyzer({
         assetPrefix: !debug ? `${name}/` : '',
