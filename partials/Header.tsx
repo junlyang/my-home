@@ -1,6 +1,6 @@
 
 import getConfig from 'next/config'
-
+import ActiveLink from './ActiveLink'
 export default function Header() {
     
     return (
@@ -9,15 +9,15 @@ export default function Header() {
             <a href="/"><h1>냠냠이</h1></a>
             <ul>
                 <li>
-                    <a href={`${process.env.BASE_URL}/`}>메인</a>
+                    <ActiveLink href={`${process.env.BASE_URL}/`}>메인1</ActiveLink>
                 </li>
                 <li>
-                    <a href={`${process.env.BASE_URL}/images`} >ImageScroll</a>
+                    <ActiveLink href={`${process.env.BASE_URL}/images`} >ImageScroll</ActiveLink>
                 </li>
                 <li>
                     <a href={`${process.env.BASE_URL}/board`} >게시판</a>
                 </li>
-                <li><a>설정</a>
+                <li><a>설정₩</a>
                     <ul>
                         <li>
                             <a href={`${process.env.BASE_URL}/color`}>color</a>

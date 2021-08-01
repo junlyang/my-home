@@ -11,6 +11,7 @@ import AppLayout from '../partials/AppLayout'
 import wrapper from '../store';
 import 'antd/dist/antd.css';
 
+
 const MyHome = ({ Component, pageProps }) => {
     return (
         <>
